@@ -14,10 +14,10 @@ public class DaciaConfigurator extends MasinaConfigurator {
     public List<String> echipamente;
     public List<String> accesorii;
 
-    public DaciaConfigurator(String marca, String model, Integer an, Double pretStandard,
+    public DaciaConfigurator(String marca, String model, Integer an,
                              String versiune, String motor, String culoare, String jante,
                              String interior, String nivelDeDotari, List<String> echipamente, List<String> accesorii) {
-        super(marca, model, an, pretStandard);
+        super(marca, model, an);
         this.versiune = versiune;
         this.motor = motor;
         this.culoare = culoare;
@@ -48,7 +48,94 @@ public class DaciaConfigurator extends MasinaConfigurator {
             System.out.println(echipamente.get(i));
     }
 
+    public void calculPretStandard() {
+        if (model.equals("Logan")) {
+            switch (versiune) {
+                case "Essential":
+                    pretStandard = 13.500;
+                    break;
+                case "Expression":
+                    pretStandard = 14.150;
+                    break;
+                case "Journey":
+                    pretStandard = 15.250;
+                    break;
+                case "Journey+":
+                    pretStandard = 15.700;
+                    break;
+            }
+        } else if (model.equals("Duster")) {
+            switch (versiune) {
+                case "Essential":
+                    pretStandard = 16.000;
+                    break;
+                case "Comfort":
+                    pretStandard = 18.000;
+                    break;
+                case "Prestige":
+                    pretStandard = 20.000;
+                    break;
+                case "Prestige+":
+                    pretStandard = 22.000;
+                    break;
+            }
+        }
+        System.out.printf("Pretul standard este: %,.3f \n", pretStandard);
+    }
 
+    public void calculPretFinal() {
+        double pretOptiuni = 0.000;
+        if (model.equals("Logan")) {
+            switch (culoare) {
+                case "Grey":
+                    pretOptiuni += 0.460;
+                    break;
+                case "Alb":
+                    pretOptiuni += 0.000;
+                    break;
+            }
+            switch (jante) {
+                case "Standard":
+                    pretOptiuni += 2.000;
+                    break;
+            }
+            switch (interior) {
+                case "Textil":
+                    pretOptiuni += 0.000;
+                    break;
+            }
+        } else if (model.equals("Duster")) {
+            switch (culoare) {
+                case "Grey":
+                    pretOptiuni += 0.500;
+                    break;
+                case "Negru":
+                    pretOptiuni += 5.500;
+                    break;
 
+                case "Alb":
+                    pretOptiuni += 0.000;
+                    break;
+            }
+            switch (jante) {
+                case "Standard":
+                    pretOptiuni += 0.500;
+                    break;
+                case "Expression":
+                    pretOptiuni += 2.500;
+                    break;
+            }
+            switch (interior) {
+                case "Piele":
+                    pretOptiuni += 3.000;
+                    break;
+                case "Textil":
+                    pretOptiuni += 2.000;
+                    break;
+            }
+        }
+        pretFinal = pretStandard + pretOptiuni;
+        System.out.printf("Pretul final este: %,.3f \n", pretFinal);
+    }
 
 }

@@ -6,12 +6,13 @@ public class MasinaConfigurator {
     public String model;
     public Integer an;
     public Double pretStandard;
+    public Double pretFinal;
 
-    public MasinaConfigurator(String marca, String model, Integer an, Double pretStandard) {
+    public MasinaConfigurator(String marca, String model, Integer an) {
         this.marca = marca;
         this.model = model;
         this.an = an;
-        this.pretStandard = pretStandard;
+
     }
 
     //OOP=programare orientata pe obiecte
@@ -28,7 +29,6 @@ public class MasinaConfigurator {
         System.out.println("Marca masinii este: " +marca);
     System.out.println("Modelul masinii este: " + model);
     System.out.println("Anul masinii este: " + an);
-    System.out.println("Pretul standard este: " + pretStandard);
   }
 
 }
