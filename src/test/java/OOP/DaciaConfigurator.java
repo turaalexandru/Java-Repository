@@ -134,6 +134,48 @@ public class DaciaConfigurator extends MasinaConfigurator {
                     break;
             }
         }
+
+        // Calculate the cost of optional features
+        for (String echipament : echipamente) {
+            switch (echipament) {
+                case "Pachet Techno":
+                    pretOptiuni += 1.600;
+                    break;
+                case "Pachet Clima":
+                    pretOptiuni += 1.200;
+                    break;
+                case "Pachet Parking":
+                    pretOptiuni += 1.500;
+                    break;
+                case "Pachet Off-Road":
+                    pretOptiuni += 1.000;
+                    break;
+                case "Pachet Confort":
+                    pretOptiuni += 1.000;
+                    break;
+                case "Pachet Siguranta":
+                    pretOptiuni += 1.000;
+                    break;
+            }
+        }
+
+        for (String accesoriu : accesorii) {
+            switch (accesoriu) {
+                case "Tableta":
+                    pretOptiuni += 0.800;
+                    break;
+                case "Scrumiera":
+                    pretOptiuni += 1.000;
+                    break;
+                case "Bare transversale":
+                    pretOptiuni += 0.400;
+                    break;
+                case "Protectie caroserie":
+                    pretOptiuni += 0.900;
+                    break;
+            }
+        }
+
         pretFinal = pretStandard + pretOptiuni;
         System.out.printf("Pretul final este: %,.3f \n", pretFinal);
     }
