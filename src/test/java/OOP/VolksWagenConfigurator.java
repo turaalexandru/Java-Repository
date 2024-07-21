@@ -40,37 +40,37 @@ public class VolksWagenConfigurator extends MasinaConfigurator {
     }
 
     public void calculPretStandard() {
-        if (model.equals("Golf")) {
+        if (getModel().equals("Golf")) {
             switch (liniideechipareVW) {
                 case "Trendline":
-                    pretStandard = 22.000;
+                    setPretStandard(22.000);
                     break;
                 case "Comfortline":
-                    pretStandard = 25.000;
+                    setPretStandard(25.000);
                     break;
                 case "Highline":
-                    pretStandard = 28.000;
+                    setPretStandard(28.000);
                     break;
             }
-        } else if (model.equals("Polo")) {
+        } else if (getModel().equals("Polo")) {
             switch (liniideechipareVW) {
                 case "Trendline":
-                    pretStandard = 18.000;
+                    setPretStandard(18.000);
                     break;
                 case "Comfortline":
-                    pretStandard = 20.000;
+                    setPretStandard(20.000);
                     break;
                 case "Highline":
-                    pretStandard = 23.000;
+                    setPretStandard(23.000);
                     break;
             }
         }
-        System.out.printf("Pretul standard este: %,.3f \n", pretStandard);
+        System.out.printf("Pretul standard este: %,.3f \n", getPretStandard());
     }
 
     public void calculPretFinal() {
         double pretOptiuni = 0.000;
-        if (model.equals("Golf")) {
+        if (getModel().equals("Golf")) {
             switch (vopsea) {
                 case "Metalizat":
                     pretOptiuni += 0.500;
@@ -87,7 +87,7 @@ public class VolksWagenConfigurator extends MasinaConfigurator {
                     pretOptiuni += 1.000;
                     break;
             }
-        } else if (model.equals("Polo")) {
+        } else if (getModel().equals("Polo")) {
             switch (vopsea) {
                 case "Metalizat":
                     pretOptiuni += 0.500;
@@ -124,8 +124,8 @@ public class VolksWagenConfigurator extends MasinaConfigurator {
             }
         }
 
-        pretFinal = pretStandard + pretOptiuni;
-        System.out.printf("Pretul final este: %,.3f \n", pretFinal);
+        setPretFinal(getPretStandard() + pretOptiuni);
+        System.out.printf("Pretul final este: %,.3f \n", getPretFinal());
     }
 
 }

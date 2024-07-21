@@ -49,43 +49,43 @@ public class DaciaConfigurator extends MasinaConfigurator {
     }
 
     public void calculPretStandard() {
-        if (model.equals("Logan")) {
+        if (getModel().equals("Logan")) {
             switch (versiune) {
                 case "Essential":
-                    pretStandard = 13.500;
+                    setPretStandard(13.500);
                     break;
                 case "Expression":
-                    pretStandard = 14.150;
+                    setPretStandard(14.150);
                     break;
                 case "Journey":
-                    pretStandard = 15.250;
+                    setPretStandard(15.250);
                     break;
                 case "Journey+":
-                    pretStandard = 15.700;
+                    setPretStandard(15.700);
                     break;
             }
-        } else if (model.equals("Duster")) {
+        } else if (getModel().equals("Duster")) {
             switch (versiune) {
                 case "Essential":
-                    pretStandard = 16.000;
+                    setPretStandard(16.000);
                     break;
                 case "Comfort":
-                    pretStandard = 18.000;
+                    setPretStandard(18.000);
                     break;
                 case "Prestige":
-                    pretStandard = 20.000;
+                    setPretStandard(20.000);
                     break;
                 case "Prestige+":
-                    pretStandard = 22.000;
+                    setPretStandard(22.000);
                     break;
             }
         }
-        System.out.printf("Pretul standard este: %,.3f \n", pretStandard);
+        System.out.printf("Pretul standard este: %,.3f \n", getPretStandard());
     }
 
     public void calculPretFinal() {
         double pretOptiuni = 0.000;
-        if (model.equals("Logan")) {
+        if (getModel().equals("Logan")) {
             switch (culoare) {
                 case "Grey":
                     pretOptiuni += 0.460;
@@ -104,7 +104,7 @@ public class DaciaConfigurator extends MasinaConfigurator {
                     pretOptiuni += 0.000;
                     break;
             }
-        } else if (model.equals("Duster")) {
+        } else if (getModel().equals("Duster")) {
             switch (culoare) {
                 case "Grey":
                     pretOptiuni += 0.500;
@@ -176,8 +176,8 @@ public class DaciaConfigurator extends MasinaConfigurator {
             }
         }
 
-        pretFinal = pretStandard + pretOptiuni;
-        System.out.printf("Pretul final este: %,.3f \n", pretFinal);
+        setPretFinal(getPretStandard() + pretOptiuni);
+        System.out.printf("Pretul final este: %,.3f \n", getPretFinal());
     }
 
 }
