@@ -39,6 +39,10 @@ public class VolksWagenConfigurator extends MasinaConfigurator {
 
     }
 
+    public void pornesteMotor () {
+        System.out.println("Masinile VW pornesc doar de la cheie");
+    }
+
     public void calculPretStandard() {
         if (getModel().equals("Golf")) {
             switch (liniideechipareVW) {

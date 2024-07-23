@@ -42,7 +42,20 @@ public class MasinaConfigurator {
 
     //polimorfism dinamic
     public void pornesteMotor (){
+
         System.out.println("Masina porneste doar cu cheia");
+    }
+
+    public void promotieDacia () {
+        System.out.println("Pentru luna Iulie, Dacia nu are promotie");
+    }
+
+    public void promotieDacia (String ticket) {
+        System.out.println("Daca ai " + ticket + " primesti reducere");
+    }
+
+    public void promotieDacia (int reducere) {
+        System.out.println("Aparent,in Decembrie primesti reducere" + reducere);
     }
 
     public Double getPretStandard() {

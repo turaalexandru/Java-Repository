@@ -47,6 +47,11 @@ public class DaciaConfigurator extends MasinaConfigurator {
         for (Integer i = 0; i < echipamente.size() - 1; i++)
             System.out.println(echipamente.get(i));
     }
+//aplicam polimorfism dinamic
+    public void pornesteMotor () {
+        System.out.println("Masinile Dacia pornesc si de la buton");
+    }
+
 
     public void calculPretStandard() {
         if (getModel().equals("Logan")) {

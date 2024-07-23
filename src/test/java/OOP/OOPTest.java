@@ -22,6 +22,10 @@ public class OOPTest {
         Logan.infoDacia();
         Logan.calculPretStandard();
         Logan.calculPretFinal();
+        Logan.pornesteMotor();
+        Logan.promotieDacia();
+        Logan.promotieDacia("Rabla");
+        Logan.promotieDacia(15);
 
         System.out.println("----------------------------");
 
@@ -53,6 +57,7 @@ public class OOPTest {
         Golf.infoVW();
         Golf.calculPretStandard();
         Golf.calculPretFinal();
+        Golf.pornesteMotor();
 
 
         System.out.println("----------------------------");
