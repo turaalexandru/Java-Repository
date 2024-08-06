@@ -7,8 +7,11 @@ public class ExceptionTest {
     @Test
     public void methodTest (){
         ExceptiiConcepte exceptiiConcepte = new ExceptiiConcepte();
-        //exceptiiConcepte.checkedExceptionExample();
-        //exceptiiConcepte.uncheckedExceptionExample();
+        exceptiiConcepte.checkedExceptionExample();
+        //exceptieConcept.uncheckedExceptionExample();
+        //exceptieConcept.throwExceptionExample(20);
+        //exceptieConcept.throwExceptionExample(15);
+        //exceptieConcept.throwsExceptionExample();
     }
 
 

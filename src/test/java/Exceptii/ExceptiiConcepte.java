@@ -22,29 +22,29 @@ public class ExceptiiConcepte {
 
     // incercam sa citim continutul dintr-un fisier
 
-    public void checkedExceptionExample () {
-        File file = new File("c://proba.text");
+    public void checkedExceptionExample(){
+        File file = new File("C://Proba.txt");
         try {
             FileInputStream fileInputStream = new FileInputStream(file);
         } catch (FileNotFoundException e) {
-            System.out.println("A intrat pe caluza de catch! Fisierul nu exista");
+            System.out.println("A intrat pe clauza de catch! Fisierul nu exista");
         }
         finally {
-            System.out.println("A intrat pe clauza de finally! Indiferent daca a mers sau nu pe catch, tot se apeleaza si finally");
+            System.out.println("A intrat pe clauza de finally! Indiferent daca a mers sau nu pe catch, tot apeleaza si finally");
         }
     }
 
-    public void uncheckedExceptionExample () {
-        Integer [] multimi = new Integer[2];
-        multimi [0] = 15;
-        multimi [1] = 30;
-        multimi [2] = 40;
+    public void uncheckedExceptionExample(){
+        Integer[] multimi = new Integer[2];
+        multimi[0] = 15;
+        multimi[1] = 30;
+        multimi[2] = 40;
 
         System.out.println(multimi[2]);
     }
 
-    public void throwExceptionExample (Integer varsta){
-        if (varsta <18) {
+    public void throwExceptionExample(Integer varsta){
+        if (varsta<18) {
             throw new RuntimeException("Nu iti dau tigari");
         }
         else {
@@ -52,8 +52,8 @@ public class ExceptiiConcepte {
         }
     }
 
-    public void checkedExceptionExample () throws {
-        File file = new File("c://proba.text");
+    public void throwsExceptionExample() throws FileNotFoundException {
+        File file = new File("C://Proba.txt");
         FileInputStream fileInputStream = new FileInputStream(file);
     }
 }
